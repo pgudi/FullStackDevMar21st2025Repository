@@ -25,9 +25,10 @@ class BasicMaths1
         {
             int res=(x/y);
             System.out.println("Division Result :"+res);
-        }catch (ArithmeticException e)
+        }
+        finally
         {
-            e.printStackTrace();
+            System.out.println("It executes always!!!");
         }
     }
 
