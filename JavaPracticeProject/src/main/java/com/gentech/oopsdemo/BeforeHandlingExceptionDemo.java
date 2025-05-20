@@ -1,7 +1,7 @@
 package com.gentech.oopsdemo;
 class BasicMaths
 {
-	static void addition(int x,int y)
+	void addition(int x,int y)
 	{
 		int result=(x+y);
 		System.out.println("Addition Result :"+result);
@@ -71,11 +71,11 @@ class BasicMaths
 }
 public class BeforeHandlingExceptionDemo {
 	public static void main(String[] args) {
-		BasicMaths.addition(20, 50);
+		new BasicMaths().addition(20, 50);
 		BasicMaths.isPositiveNumber(45);
 		BasicMaths.isNegativeNumber(-255);
 		BasicMaths.substraction(100, 75);
-		BasicMaths.division(450, 0);
+		BasicMaths.division(450, 10);
 		BasicMaths.multiplication(12, 15);
 		BasicMaths.isEvenNumber(78);
 		BasicMaths.isOddNumber(333);

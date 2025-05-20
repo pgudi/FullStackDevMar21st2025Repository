@@ -37,17 +37,18 @@ public class PolymorphismDemo {
     public static void main(String[] args) {
         GeometricFigure figure=null;
 
-        Rectangle rect=new Rectangle();
-        Square square=new Square();
-        Circle circle=new Circle();
-
-        figure=rect;
+        figure =new Rectangle();
         figure.area();
 
-        figure=square;
+        figure =new Square();
         figure.area();
 
-        figure=circle;
+        figure =new Circle();
         figure.area();
+
+
+
+
+
     }
 }
