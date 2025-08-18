@@ -34,6 +34,19 @@ public class EmployeeController {
         return new ResponseEntity<>(service.getAllEmployee(), HttpStatus.OK);
     }
 
+    @GetMapping("/employees/pages")
+    public ResponseEntity<List<EmployeeDto>> getAllEmployees(@RequestParam int pageNumber,
+                                                             @RequestParam int pageSize)
+    {
+        return new ResponseEntity<>(service.getAllEmployee(pageNumber,pageSize), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/sorting")
+    public ResponseEntity<List<EmployeeDto>> getAllEmployees(@RequestParam String columnName)
+    {
+        return new ResponseEntity<>(service.getAllEmployee(columnName), HttpStatus.OK);
+    }
+
     @PutMapping("/employees/{id}")
     public ResponseEntity<EmployeeDto> modifyEmployee(@PathVariable Integer id,
                                                       @RequestBody EmployeeDto employeeDto)
@@ -46,5 +59,30 @@ public class EmployeeController {
     {
         service.deleteEmployee(id);
         return  new ResponseEntity<>("The Employee with id "+id+" has deleted successfullly!!",HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/filterbyjobname")
+    public ResponseEntity<List<EmployeeDto>> getEmployeesByJob(@RequestParam String jobname)
+    {
+        return new ResponseEntity<>(service.getEmplyeeByJobName(jobname), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/filterbycityandstate")
+    public ResponseEntity<List<EmployeeDto>> getEmployeesByCityAndState(@RequestParam String city,
+                                                                        @RequestParam String state)
+    {
+        return new ResponseEntity<>(service.getEmplyeesByCityNameAndStateName(city, state), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/emailkeyword")
+    public ResponseEntity<List<EmployeeDto>> getEmployeesByEmailLike(@RequestParam String email)
+    {
+        return new ResponseEntity<>(service.getEmployeesByEmailIdKeyword(email), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/filterbyjobnameorcityname")
+    public ResponseEntity<List<EmployeeDto>> getEmplyeesBasedOnJobNameOrCityName(@RequestParam String jobName, @RequestParam String cityName)
+    {
+        return new ResponseEntity<>(service.getEmployeesByJobNameOrCityName(jobName,cityName), HttpStatus.OK);
     }
 }
