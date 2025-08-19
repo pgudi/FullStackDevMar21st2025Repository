@@ -109,4 +109,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public int updateEmployeesByStateName(String stateName, Integer id) {
+
+        return repository.updateEmployeesByStateName(stateName,id);
+    }
+
 }
