@@ -30,4 +30,6 @@ public interface EmployeeService {
     List<EmployeeDto> getEmployeesByEmailIdKeyword(String emailKeyword);
 
     List<EmployeeDto> getEmployeesByJobNameOrCityName( String jobName, String cityName);
+
+    int updateEmployeesByStateName( String stateName, Integer id);
 }

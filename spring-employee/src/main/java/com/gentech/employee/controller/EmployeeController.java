@@ -85,4 +85,11 @@ public class EmployeeController {
     {
         return new ResponseEntity<>(service.getEmployeesByJobNameOrCityName(jobName,cityName), HttpStatus.OK);
     }
+
+
+    @PutMapping("/employees/update")
+    public ResponseEntity<Integer> updateEmployees(@RequestParam String stateName, @RequestParam Integer id)
+    {
+        return new ResponseEntity<>(service.updateEmployeesByStateName(stateName,id), HttpStatus.OK);
+    }
 }
