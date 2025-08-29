@@ -20,6 +20,12 @@ public class Department {
     public Department(){
 
     }
+
+    public Department(String dname, String loc) {
+        this.dname = dname;
+        this.loc = loc;
+    }
+
     public Department(Integer id, String dname, String loc) {
         this.id = id;
         this.dname = dname;
